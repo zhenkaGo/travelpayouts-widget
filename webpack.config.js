@@ -26,7 +26,7 @@ const styleLoaders = (options, loader, isProduction) => {
 const getPlugin = (isProduction) => {
   const plugins = [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({ template: './src/index.html', inject: false }),
   ]
   if (isProduction) {
     plugins.push(new MiniCssExtractPlugin(), new OptimizeCSSAssetsPlugin())
@@ -37,7 +37,7 @@ const getPlugin = (isProduction) => {
 module.exports = (env) => ({
   mode: env.production ? 'production' : 'development',
   entry: './src/index.js',
-  devtool: env.production ? false : 'inline-source-map',
+  devtool: env.production ? false : 'source-map',
   optimization: env.production ? {
     minimizer: [
       new TerserPlugin({
@@ -112,7 +112,7 @@ module.exports = (env) => ({
   },
   plugins: getPlugin(env.production),
   output: {
-    filename: 'bundle.js',
+    filename: 'widget.js',
     path: path.resolve(__dirname, 'dist'),
   },
 })

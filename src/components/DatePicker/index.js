@@ -3,7 +3,7 @@ import calendarIcon from './calendar.svg'
 
 export default function DatePicker({ placeholder, name, id }) {
   return `
-    <div class="${styles.datePicker} form-input">
+    <div class="${styles.datePicker} tp-widget-input">
       <input
         type="text"
         class="${styles.datePickerInput}"

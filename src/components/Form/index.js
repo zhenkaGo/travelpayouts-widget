@@ -6,7 +6,7 @@ export default function Form({ customClass = '' }) {
     <form class="${styles.form} ${customClass}">
       ${DatePicker({ placeholder: 'Depart time', name: 'departDate', id: 'departDate' })}
       ${DatePicker({ placeholder: 'Return time', name: 'returnDate', id: 'returnDate' })}
-      <button class="${styles.submitButton} form-button">search</button>
+      <button class="${styles.submitButton} tp-widget-button">search</button>
     </form>
   `
 }
