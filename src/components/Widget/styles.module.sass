@@ -1,12 +1,10 @@
 .wrapperForm
   box-sizing: border-box
   background-color: #4A90E2
-  max-width: 1024px
-  min-width: 200px
+  padding: 2px 20px 15px
   display: grid
   grid-template-columns: repeat(14, 1fr)
   grid-template-rows: auto
-  padding: 2px 20px 15px
 
   *
     box-sizing: border-box
@@ -34,41 +32,39 @@
     grid-column: 10 span
     justify-self: stretch
 
-body :global .dp-below
-  width: 240px
-
-@media (max-width: 991px)
-  .wrapperForm
-    max-width: 768px
-
+  &.widget-md, &.widget-sm, &.widget-xs
     .formDescription
       grid-column: 14 span
       margin: 0 0 15px
 
-    .formGrid
-      grid-row: 3
-      grid-column: 14 span
-
-    & :global .form-input
-      max-width: 220px
-
-@media (max-width: 767px)
-  .wrapperForm
-    max-width: 440px
+  &.widget-sm, &.widget-xs
     padding: 10px 20px 15px
-
-    .formDescription
-      grid-column: 14 span
-      margin: 0 0 15px
-
-    .formGrid
-      grid-row: 3
-      grid-column: 14 span
-      flex-wrap: wrap
 
     .formTitle
       font-size: 16px
       margin: 0 0 12px 0
+
+
+  &.widget-md, &.widget-sm, &.widget-xs
+    .formGrid
+      grid-row: 3
+      grid-column: 14 span
+
+  &.widget-lg
+    max-width: 1024px
+    min-width: 200px
+
+  &.widget-md
+    max-width: 768px
+
+    & :global .form-input
+      max-width: 220px
+
+  &.widget-sm
+    max-width: 440px
+
+    .formGrid
+      flex-wrap: wrap
 
     & :global .form-input
       max-width: 190px
@@ -77,8 +73,7 @@ body :global .dp-below
     & :global .form-button
       max-width: 100%
 
-@media (max-width: 575px)
-  .wrapperForm
+  &.widget-xs
     max-width: 286px
 
     .formDescription
@@ -87,6 +82,10 @@ body :global .dp-below
 
     .formGrid
       grid-row: 2
+      flex-wrap: wrap
+
+    & :global .form-button
+      max-width: 100%
 
     & :global .form-input
       max-width: 100%
