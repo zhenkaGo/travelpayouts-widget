@@ -1,4 +1,4 @@
-import DatePicker from '../../components/DatePicker'
+import DatePicker from '../DatePicker'
 import styles from './styles.module.sass'
 
 export default function Form({ customClass = '' }) {

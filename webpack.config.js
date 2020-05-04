@@ -101,7 +101,17 @@ module.exports = (env) => ({
         use: {
           loader: 'babel-loader'
         }
-      }
+      },
+      {
+        test: /\.js$/,
+        enforce: 'pre',
+        use: [
+          {
+            loader: require.resolve('eslint-loader'),
+          },
+        ],
+        include: path.resolve(__dirname, 'src'),
+      },
     ],
   },
   resolve: {
