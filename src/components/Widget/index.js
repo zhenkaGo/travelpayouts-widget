@@ -19,10 +19,8 @@ export default function Widget({ parentWidth, widgetIdClass }) {
 
   el.classList.add(styles.wrapperForm, styles[`widget-${widgetSize}`], widgetIdClass)
   el.innerHTML = `
-  <h2 class="${styles.formTitle} tp-widget-title">Where does it come from? Why do we use it?</h2>
-  <p class="${styles.formDescription} tp-widget-description">
-    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
-  </p>
+  <h2 class="${styles.formTitle} tp-widget-title">${window.i18n('title')}</h2>
+  <p class="${styles.formDescription} tp-widget-description">${window.i18n('description')}</p>
   ${Form({ customClass: styles.formGrid })}
 `
   return el
