@@ -119,6 +119,7 @@ module.exports = (env) => ({
   },
   devServer: {
     contentBase: './dist',
+    port: 3000
   },
   plugins: getPlugin(env.production),
   output: {
