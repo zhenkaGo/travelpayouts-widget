@@ -12,8 +12,8 @@ export default function Widget({ parentWidth, widgetIdClass }) {
   const widgetSize = SIZES.find(([key]) => inRange(parentWidth, ...key)) || SIZES[0]
   el.classList.add(styles.wrapperForm, styles[`widget-${widgetSize[1]}`], widgetIdClass)
   el.innerHTML = `
-  <h2 class="${styles.formTitle} tp-widget-title">${window.i18n('title')}</h2>
-  <p class="${styles.formDescription} tp-widget-description">${window.i18n('description')}</p>
+  <h2 class="${styles.formTitle} tp-widget-title">${i18n('title')}</h2>
+  <p class="${styles.formDescription} tp-widget-description">${i18n('description')}</p>
   ${Form({ customClass: styles.formGrid })}
 `
   return el

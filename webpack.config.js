@@ -107,7 +107,7 @@ module.exports = (env) => ({
         enforce: 'pre',
         use: [
           {
-            loader: require.resolve('eslint-loader'),
+            loader: 'eslint-loader',
           },
         ],
         include: path.resolve(__dirname, 'src'),
